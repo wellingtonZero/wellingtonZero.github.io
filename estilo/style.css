@@ -1,0 +1,213 @@
+/*site para pegar emojis https://emojipedia.org/*/
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@font-face{
+    font-family: 'android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+/*
+vamos usar uma paleta de cores para facilitar
+tudo que estiver em root vai servir para o documento inteiro
+para isso vamos criar variaveis em css usamos o --
+*/
+
+:root{
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+
+/*
+podemos retirar os espaços de padding de todos usando o elementos usando *
+ideal para ajustar conforme vai vendo a posições do elementos
+*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+body {
+    background-color: var(--cor0);
+    font-weight: var(--fonte-padrao);
+}
+
+a.externo::after{
+    /*inserindo o simbolo após o link*/
+    font-size: 15px;
+    content: '\00A0\📌'; 
+    
+}
+
+header { 
+    background-image: linear-gradient(to bottom,var(--cor3), var(--cor4));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+    font-size: 40px;
+}
+
+header > h1{
+    color: white;
+    font-family: var(--fonte-destaque);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px black;
+    
+
+}
+header > p{
+    color: white;
+    font-size: 30px;
+    font-family: var(--fonte-padrao);
+    max-width: 800px;
+    margin: auto;
+}
+
+nav{
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 9px rgba(0,0,0,0.363);
+}
+
+nav > a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition-duration: .5s;
+}
+
+nav > a:hover{
+    background-color: var(--cor2);
+    color: var(--cor5)
+}
+
+div.video{
+    background-color: var(--cor5);
+    margin: 0px -20px 30px;
+    padding: 20px;
+    padding-bottom: 50%;
+    position: relative;
+}
+
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+main{
+    margin: auto;
+    background-color: white;
+    /*aplicando responsividade*/
+    min-width: 300px;
+    max-width: 1000px;
+    padding: 40px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.404);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main a:hover{
+    text-decoration: underline;
+}
+
+main h1{
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+    
+}
+
+main h2{
+    font-family: var(--fonte-android);
+    background-image: linear-gradient(to right, var(--cor1),transparent);
+    text-indent: 10px;
+}
+
+main p{
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 2em;
+    font-size: 1em;
+}
+
+main strong{
+    color: var(--cor4);
+    font-weight: bold;
+    background-color: var(--cor1);
+    padding: 2px 6px;
+}
+
+main img{
+    /*aplicando responsividade*/
+    /*as imagens vão se adaptar independente do tamanho onde estão*/
+    width: 100%;
+}
+
+main img.pequena{
+    max-width: 350px;
+    /*para centralizar a imagem com margin auto não vai dar certo então usa*/
+    display:block;
+    margin: auto;
+}
+
+aside{
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px black;
+}
+
+aside > h3{
+    background-color: var(--cor4);
+    color: white;
+    padding: 5px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+aside > ul{
+    /*00A0 é um espaço sem quebrar*/
+    list-style-type: '\2714\00A0\00A0';
+    list-style-position: inside;
+    columns: 2;
+}
+
+footer {
+    margin: auto;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+footer a{
+    text-decoration: overline;
+    color: #fd2a05;
+    transition-duration: .9s;
+   
+}
+
+footer a:hover{
+    text-decoration: underline; 
+    color: #48fc01;
+}
+
+.footer a::after {
+    /* Inserir o símbolo após o nome */
+    content: '\00A0\💻️';
+}
